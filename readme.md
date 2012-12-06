@@ -51,7 +51,7 @@ var pluto = new Dog({
 pluto.extend({
     greet : function () {
         this.say('Hi, my name is ' + this.name + ', and im ' + this.owner + ' dog');
-    };
+    }
 });
 
 pluto.bark();
