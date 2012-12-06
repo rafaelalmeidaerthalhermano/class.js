@@ -20,13 +20,17 @@ var Animal = new Class(function (params) {
     this.die = function () {
         status = 'dead';
     };
-    
-    this.say = function (phrase) {
+});
+
+//adding say method in Animal
+Animal.extend({
+    say : function (phrase) {
         alert(phrase);
     }
 });
 
 var Dog = new Class(function (params) {
+    //telling Dog to inherit from animal
     this.inherit(Animal);
     
     this.name  = params.name;
@@ -34,10 +38,6 @@ var Dog = new Class(function (params) {
     
     this.bark = function () {
         this.say('Au Au');
-    };
-    
-    this.greet = function () {
-        this.say('Hi, my name is ' + this.name + ', and im ' + this.owner + ' dog');
     };
 });
 
@@ -47,14 +47,21 @@ var pluto = new Dog({
     status: 'born'
 });
 
+//adding say method in dog instance
+pluto.extend({
+    greet : function () {
+        this.say('Hi, my name is ' + this.name + ', and im ' + this.owner + ' dog');
+    };
+});
+
 pluto.bark();
 alert(pluto.status());
 pluto.greet();
 ```
 * * *
-#####References:
+###References:
 
-###Class Object
+#####Class Object
 
 ```js
 Class.inherit(ancestor)
@@ -64,7 +71,7 @@ Class.inherit(ancestor)
 Class.extend(attributes)
 ```
 
-###Instance Object
+#####Instance Object
 
 ```js
 Instance.extend(attributes)
