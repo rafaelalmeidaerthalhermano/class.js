@@ -1,4 +1,4 @@
-Classy.js
+Class.js
 ===============================
 
 Usage examples:
