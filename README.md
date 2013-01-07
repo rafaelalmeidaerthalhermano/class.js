@@ -1,14 +1,41 @@
 Class.js
 ===============================
 
-Usage examples:
+#####Class Object
+
+Example:
+```js
+var Dog = new Class(function (params) {
+    this.name  = params.name;
+    this.owner = params.owner;
+    
+    this.bark = function () {
+        console.log('Au Au');
+    };
+
+    this.greet = function () {
+        console.log('Hi, my name is ' + this.name + ', and im ' + this.owner + 's dog');
+    };
+});
+
+var pluto = new Dog({
+    name  : 'pluto',
+    owner : 'mickey',
+    status: 'born'
+});
+```
+
+* * *
+
+```js
+Class.inherit(ancestor)
+```
+Examples:
 
 ```js
 var Animal = new Class(function (params) {
-    //private atributte
-    var status = params.status;
+    var status;
     
-    //public methods
     this.status = function () {
         return status;
     };
@@ -22,53 +49,68 @@ var Animal = new Class(function (params) {
     };
 });
 
-//adding say method in Animal
-Animal.extend({
-    say : function (phrase) {
-        alert(phrase);
-    }
-});
-
 var Dog = new Class(function (params) {
-    //telling Dog to inherit from animal
-    this.inherit(Animal);
+    this.inherit(Animal); /*telling Dog to inherit from animal*/
     
     this.name  = params.name;
     this.owner = params.owner;
     
     this.bark = function () {
-        this.say('Au Au');
+        console.log('Au Au');
+    };
+});
+```
+
+```js
+var Animal = new Class(function (params) {
+    var status;
+    
+    this.status = function () {
+        return status;
+    };
+    
+    this.born = function () {
+        status = 'born';
+    };
+    
+    this.die = function () {
+        status = 'dead';
     };
 });
 
-var pluto = new Dog({
-    name  : 'pluto',
-    owner : 'mickey',
-    status: 'born'
+var Dog = new Class(function (params) {
+    this.name  = params.name;
+    this.owner = params.owner;
+    
+    this.bark = function () {
+        console.log('Au Au');
+    };
 });
-
-//adding say method in dog instance
-pluto.extend({
-    greet : function () {
-        this.say('Hi, my name is ' + this.name + ', and im ' + this.owner + ' dog');
-    }
-});
-
-pluto.bark();
-alert(pluto.status());
-pluto.greet();
+Dog.inherit(Animal); /*telling Dog to inherit from animal*/
 ```
+
 * * *
-###References:
-
-#####Class Object
-
-```js
-Class.inherit(ancestor)
-```
 
 ```js
 Class.extend(attributes)
+```
+Examples:
+
+```js
+var Dog = new Class(function (params) {    
+    this.name  = params.name;
+    this.owner = params.owner;
+    
+    this.bark = function () {
+        console.log('Au Au');
+    };
+});
+
+Dog.extend({
+    greet : function () {
+        console.log('Hi, my name is ' + this.name + ', and im ' + this.owner + 's dog');
+    }
+});
 ```
 
 #####Instance Object
