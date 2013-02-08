@@ -16,7 +16,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 Class.js
 ===============================
 
-##### Class Object
+## Class Object
 
 Usage example:
 
@@ -32,8 +32,6 @@ var Animal = new Class(function (especies) {
 var dog = new Animal('dog');
 dog.greet(); //=> Hi! I\'m a dog
 ```
-
-* * *
 
 #### Methods
 
@@ -113,7 +111,9 @@ var pluto = new Dog('dog');
 pluto.say('Au Au'); //=> Au Au \n Hi! I'm a dog
 ```
 
-##### Instance Object
+* * *
+
+## Instance Object
 
 Usage example:
 
@@ -129,8 +129,6 @@ var Animal = new Class(function (especies) {
 var dog = new Animal('dog');
 dog.greet(); //=> Hi! I\'m a dog
 ```
-
-* * *
 
 #### Methods
 
