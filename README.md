@@ -33,8 +33,6 @@ var dog = new Animal('dog');
 dog.greet(); //=> Hi! I\'m a dog
 ```
 
-#### Methods
-
 ### Extend
 
 Usage example:
@@ -129,8 +127,6 @@ var Animal = new Class(function (especies) {
 var dog = new Animal('dog');
 dog.greet(); //=> Hi! I\'m a dog
 ```
-
-#### Methods
 
 ### Extend
 
