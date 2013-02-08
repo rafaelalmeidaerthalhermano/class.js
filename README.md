@@ -109,8 +109,6 @@ var pluto = new Dog('dog');
 pluto.say('Au Au'); //=> Au Au \n Hi! I'm a dog
 ```
 
-* * *
-
 ## Instance Object
 
 Usage example:
