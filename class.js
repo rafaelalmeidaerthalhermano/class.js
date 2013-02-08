@@ -6,8 +6,6 @@
  * @param constructor: função a ser executada
  */
 var Class = function (constructor) {
-    'use strict';
-
     var _schema,
         copyTo,
         inherit,
@@ -105,8 +103,25 @@ var Class = function (constructor) {
         };
 
         /* Métodos da instância */
+
+        /* @function ubber
+         *
+         * @author: Rafael Almeida Erthal Hermano
+         * @description: Executa o método implementado no pai
+         */
         _instance.ubber = function () {
-        
+            var caller,
+                i;
+            for (i in this) {
+                if (this[i] === arguments.callee.caller) {
+                    caller = i;
+                }
+            }
+            for (i in ancestors) {
+                if (ancestors[i]().hasOwnProperty(caller)) {
+                    return ancestors[i]()[caller].apply(this, arguments);
+                }
+            }
         };
 
         /* @function instanceOf
