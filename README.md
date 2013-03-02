@@ -20,6 +20,8 @@ dog.greet(); //=> Hi! I\'m a dog
 
 ### Extend
 
+Serves to add new methods to the class after it is created
+
 Usage example:
 
 ```js
@@ -42,6 +44,8 @@ dog.breathe(); //=> Woow! Fresh air!
 ```
 
 ### Inherit
+
+The method is used for the current class inherits the class passed as parameter, note that multiple inheritance is allowed
 
 Usage example:
 
@@ -69,6 +73,8 @@ pluto.bark(); //=> Hi! I'm a dog and i'm saying: Au Au
 ```
 
 ### Ubber
+
+Execute the method with the same name in a parent class
 
 Usage example:
 
@@ -113,6 +119,8 @@ dog.greet(); //=> Hi! I\'m a dog
 
 ### Extend
 
+Serves to add new methods to the object after it is created
+
 Usage example:
 
 ```js
@@ -135,6 +143,8 @@ dog.breathe(); //=> Woow! Fresh air!
 ```
 
 ### InstanceOf
+
+Checks whether the class is an instance of the class passed as parameter or her heir
 
 Usage example:
 
