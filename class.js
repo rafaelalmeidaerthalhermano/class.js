@@ -14,14 +14,13 @@
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see http://www.gnu.org/licenses/.
  */
-
 /* @class: Class
- *
- * @author: Rafael Almeida Erthal Hermano
- * @description: Construtor de uma classe
- * 
- * @param constructor: função a ser executada
- */
+*
+* @author: Rafael Almeida Erthal Hermano
+* @description: Construtor de uma classe
+*
+* @param constructor: função a ser executada
+*/
 var Class = function (constructor) {
 
     if (!constructor || constructor.constructor !== Function) {
@@ -32,12 +31,12 @@ var Class = function (constructor) {
      *
      * @author: Rafael Almeida Erthal Hermano
      * @description: Adiciona nova classe antepassada
-     * 
+     *
      * @param ancestor: a classe que será herdada
-     */    
+     */
     constructor.prototype.inherit = function (ancestor) {
         var property,
-            temp = {};
+            temp = {inherit : this.inherit};
             
         if (!this.ancestors) {
             this.ancestors = [];
@@ -45,6 +44,10 @@ var Class = function (constructor) {
         
         ancestor.apply(temp , arguments.callee.caller.arguments);
         this.ancestors.push(temp);
+        
+        for (property in temp.ancestors) {
+            this.ancestors.push(temp.ancestors[property]);
+        }
         
         for (property in temp) {
             if (!this.hasOwnProperty(property)) {
@@ -63,9 +66,9 @@ var Class = function (constructor) {
      *
      * @author: Rafael Almeida Erthal Hermano
      * @description: Adiciona novos atributos ao objeto
-     * 
+     *
      * @param obj: atributos que serão inseridos
-     */    
+     */
     constructor.prototype.extend = function (obj) {
         var property;
 
@@ -102,16 +105,16 @@ var Class = function (constructor) {
      * @param obj: classe que será verificada
      */
     constructor.prototype.instanceOf = function (obj) {
-        return this.constructor === obj;
+        return this.constructor == obj;
     };
 
     /* @function extend
      *
      * @author: Rafael Almeida Erthal Hermano
      * @description: Adiciona novos atributos à classe
-     * 
+     *
      * @param obj: atributos que serão inseridos
-     */    
+     */
     constructor.extend = function (obj) {
         var property;
 
