@@ -162,3 +162,7 @@ console.log(pluto.instanceOf(Dog)) //=> true
 console.log(pluto.instanceOf(Animal)) //=> true
 console.log(pluto.instanceOf(Boolean)) //=> false
 ```
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/rafaelalmeidaerthalhermano/class.js/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
